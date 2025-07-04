@@ -1,6 +1,6 @@
 # Smart Switch
 
-The **Smart Switch** system enables remote and local control of AC-powered appliances—such as lamps—via multiple user interfaces, including a mobile app, website dashboard, Smart Ring, and a physical pushbutton. Designed for portability and user convenience, it integrates both hardware and software components to provide seamless IoT-based control.
+The **Smart Switch** system enables remote and local control of AC-powered appliances such as lamps via multiple user interfaces, including a mobile app, website dashboard, Smart Ring, and a physical pushbutton. Designed for portability and user convenience, it integrates both hardware and software components to provide seamless IoT-based control.
 
 ---
 
@@ -8,7 +8,7 @@ The **Smart Switch** system enables remote and local control of AC-powered appli
 
 | Smart Switch Circuit | Prototype (OFF) | Prototype (ON) |
 |----------------------|------------------|-----------------|
-| ![Circuit](images/Circuit.png) | ![Prototype OFF](images/Prototype OFF.jpg) | ![Prototype ON](images/Prototype ON.jpg) |
+| ![Circuit](images/Circuit.png) | ![Prototype OFF](images/Prototype_OFF.jpg) | ![Prototype ON](images/Prototype_ON.jpg) |
 
 > ⚠️ Replace the paths in the table above (`images/*.jpg`) with the actual paths or upload the images accordingly.
 
