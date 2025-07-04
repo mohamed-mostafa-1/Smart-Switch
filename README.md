@@ -8,7 +8,7 @@ The **Smart Switch** system enables remote and local control of AC-powered appli
 
 | Smart Switch Circuit | Prototype (OFF) | Prototype (ON) |
 |----------------------|------------------|-----------------|
-| ![Circuit](images/Circuit.png) | ![Prototype OFF](images/Prototype_OFF.jpg) | ![Prototype ON](images/Prototype_ON.jpg) |
+| ![Circuit](images/Circuit.png) | ![Prototype OFF](images/Prototype OFF.jpg) | ![Prototype ON](images/Prototype ON.jpg) |
 
 > ⚠️ Replace the paths in the table above (`images/*.jpg`) with the actual paths or upload the images accordingly.
 
