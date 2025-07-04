@@ -6,9 +6,9 @@ The **Smart Switch** system enables remote and local control of AC-powered appli
 
 ## 📸 Images
 
-| **Smart Switch Circuit** | ![Circuit](images/Circuit.png) |
-| **Prototype (OFF)** | ![Prototype OFF](images/Prototype_OFF.jpg) | 
-| **Prototype (ON)** | ![Prototype ON](images/Prototype_ON.jpg) |
+| Smart Switch Circuit | Prototype (OFF) | Prototype (ON) |
+|----------------------|------------------|-----------------|
+| ![Circuit](images/Circuit.png) | ![Prototype OFF](images/Prototype_OFF.jpg) | ![Prototype ON](images/Prototype_ON.jpg) |
 
 ---
 
@@ -74,4 +74,3 @@ The ESP-01S is programmed to:
 
 Mohamed Mostafa  
 **IoT Engineer**  
-
