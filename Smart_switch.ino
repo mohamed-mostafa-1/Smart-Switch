@@ -4,14 +4,14 @@
 #include "addons/TokenHelper.h"
 #include "addons/RTDBHelper.h"
 
-#define DOOR_PIN 0        // GPIO0 for LED
+#define LED_PIN 0        // GPIO0 for LED
 #define BUTTON_PIN 2     // GPIO2 for Button
 
-#define WIFI_SSID "Realme"
-#define WIFI_PASSWORD "99999999"
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 
-#define API_KEY "AIzaSyB3yQU7cFo3T_-NZdD0-YuuxrcDfkwhkqk"
-#define DATABASE_URL "https://leap-smart-band-default-rtdb.firebaseio.com/"
+#define API_KEY ""
+#define DATABASE_URL ""
 
 FirebaseData fbdo;
 FirebaseAuth auth;
@@ -27,7 +27,7 @@ bool signupOK = false;
 
 void setup() {
   Serial.begin(115200);
-  pinMode(DOOR_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
   pinMode(BUTTON_PIN, INPUT_PULLUP);  // GPIO0 needs pull-up
 
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -65,13 +65,13 @@ void loop() {
   if ((millis() - lastDebounceTime) > debounceDelay) {
     if (currentButtonState == HIGH && reading == LOW) {
       ledState = !ledState;
-      digitalWrite(DOOR_PIN, ledState ? HIGH : LOW);
-      Serial.print("Button Pressed - DOOR: ");
-      Serial.println(ledState ? "CLOSED" : "OPEN");
+      digitalWrite(LED_PIN, ledState ? HIGH : LOW);
+      Serial.print("Button Pressed - LED: ");
+      Serial.println(ledState ? "ON" : "OFF");
 
       if (Firebase.ready() && signupOK) {
         String valueToSend = ledState ? "1" : "0";
-        if (Firebase.RTDB.setString(&fbdo, "/Door/stat", valueToSend)) {
+        if (Firebase.RTDB.setString(&fbdo, "/Lights/stat", valueToSend)) {
           Serial.println("Firebase updated.");
         } else {
           Serial.print("Firebase setString failed: ");
@@ -89,14 +89,14 @@ void loop() {
     sendDataPrevMillis = millis();
 
     if (Firebase.ready() && signupOK) {
-      if (Firebase.RTDB.getString(&fbdo, "/Door/stat")) {
+      if (Firebase.RTDB.getString(&fbdo, "/Lights/stat")) {
         String cloudValue = fbdo.stringData();
         bool newLedState = (cloudValue == "1");
         if (newLedState != ledState) {
           ledState = newLedState;
-          digitalWrite(DOOR_PIN, ledState ? HIGH : LOW);
-          Serial.print("Updated from Firebase - DOOR: ");
-          Serial.println(ledState ? "CLOSED" : "OPEN");
+          digitalWrite(LED_PIN, ledState ? HIGH : LOW);
+          Serial.print("Updated from Firebase - LED: ");
+          Serial.println(ledState ? "ON" : "OFF");
         }
       } else {
         Serial.print("Firebase getString failed: ");
